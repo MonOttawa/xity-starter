@@ -1,13 +1,13 @@
-{% if postList.length %}
+{% if cmsPosts.length %}
   <section>
     <ol reversed>
-      {% for item in postList %}
+      {% for item in cmsPosts %}
         <hr/>
         <li>
           <h3>
-            <a href="{{ item.url }}" rel="bookmark">{{ item.data.title }}</a>
+            <a href="{{ item.fields.slug }}" rel="bookmark">{{ item.fields.title }}</a>
           </h3>
-          <time datetime="{{ item.date | htmlDate }}">{{ item.date | dateFilter }}</time>
+          <time datetime="{{ item.sys.updatedAt | htmlDate }}">{{ item.sys.updatedAt | dateFilter }}</time>
         </li>
       {% endfor %}
     </ol>
